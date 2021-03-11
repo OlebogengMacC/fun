@@ -1,0 +1,47 @@
+<div class="">
+<%= form_for @changeset, @action, [class: "flex flex-col items-center"],fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :name, class: "form-label" %>
+  <%# <span class="bg-red-900 w-48 h-4"> %>
+  <%= text_input f, :name, [class: "text-input", placeholder: "Name"] %>
+  <%# </span> %>
+  <%= error_tag f, :name %>
+
+  <%= label f, :alternate_name, class: "form-label" %>
+  <%= text_input f, :alternate_name, [class: "text-input resize-none", placeholder: "Other Name"] %>
+  <%= error_tag f, :alternate_name %>
+  
+  <%= label f, :disambiguating_description, class: "form-label" %>
+  <%= textarea f, :disambiguating_description, [class: "text-input resize-none", placeholder: "Description", rows: "2"] %>
+  <%= error_tag f, :disambiguating_description %>
+
+  <%= label f, :description, class: "form-label" %>
+  <%= textarea f, :description, [class: "text-input", placeholder: "Description", rows: "3"] %>
+  <%= error_tag f, :description %>
+
+  <%= label f, :identifier, class: "form-label" %>
+  <%= text_input f, :identifier, [class: "text-input", placeholder: "Identifier"] %>
+  <%= error_tag f, :identifier %>
+
+  <%= label f, :image, class: "form-label" %>
+  <%= text_input f, :image, [class: "text-input", placeholder: "Drag Image here"] %>
+  <%= error_tag f, :image %>
+
+  <%= label f, :same_as, class: "form-label" %>
+  <%= text_input f, :same_as, [class: "text-input", placeholder: "Similar to"] %>
+  <%= error_tag f, :same_as %>
+
+  <%= label f, :url, class: "form-label" %>
+  <%= text_input f, :url, [class: "text-input", placeholder: "URL"] %>
+  <%= error_tag f, :url %>
+
+  <div class="btn-inv">
+    <%= submit "Save" %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,26 @@
+<h1>Listing Resource sub types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for resource_sub_type <- @resource_sub_types do %>
+    <tr>
+      <td><%= resource_sub_type.name %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.resource_sub_type_path(@conn, :show, resource_sub_type) %></span>
+        <span><%= link "Edit", to: Routes.resource_sub_type_path(@conn, :edit, resource_sub_type) %></span>
+        <span><%= link "Delete", to: Routes.resource_sub_type_path(@conn, :delete, resource_sub_type), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Resource sub type", to: Routes.resource_sub_type_path(@conn, :new) %></span>

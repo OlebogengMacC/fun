@@ -1,0 +1,40 @@
+<h1 class="m-12 text-5xl">Things</h1>
+
+<table class="min-w-max w-full table-auto">
+  <thead>
+    <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+      <th class="py-3 px-6 text-left">Name</th>
+      <th class="py-3 px-6 text-left">Alternate name</th>
+      <th class="py-3 px-6 text-center">Description</th>
+      <th class="py-3 px-6 text-center sm:hidden">Disambiguating description</th>
+      <th class="py-3 px-6 text-center">Identifier</th>
+      <th class="py-3 px-6 text-center">Image</th>
+      <th class="py-3 px-6 text-center sm:hidden">Same as</th>
+      <th class="py-3 px-6 text-center">Url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for thing <- @things do %>
+    <tr>
+      <td><%= thing.name %></td>
+      <td><%= thing.alternate_name %></td>
+      <td><%= thing.description %></td>
+      <td><%= thing.disambiguating_description %></td>
+      <td><%= thing.identifier %></td>
+      <td><%= thing.image %></td>
+      <td><%= thing.same_as %></td>
+      <td><%= thing.url %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.thing_path(@conn, :show, thing) %></span>
+        <span><%= link "Edit", to: Routes.thing_path(@conn, :edit, thing) %></span>
+        <span><%= link "Delete", to: Routes.thing_path(@conn, :delete, thing), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span class="bg-gray-600 text-gray-200 p-4 my-48 rounded-sm"><%= link "New Thing", to: Routes.thing_path(@conn, :new) %></span>

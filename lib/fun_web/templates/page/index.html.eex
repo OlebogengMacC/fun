@@ -1,0 +1,12 @@
+<section class="bg-gray-300 bg-gradient-to-t w-screen flex">
+  <%# Service Description Section %>
+  <div class="w-3/5 bg-gray-700 p-12">
+    <h1 class="my-12 text-5xl text-white font-bold"><%= gettext "Welcome to %{name}", name: "Pages" %></h1>
+    <p class="my-12 text-2xl text-white font-bold">Peace of mind from prototype to production</p>
+  </div>
+  <%# Image Container %>
+  <div class="w-2/5 bg-gray-300 p-12"></div>
+  
+</section>
+
+

@@ -1,0 +1,22 @@
+/* Tailwind CSS */
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer components {
+    .btn-gray {
+        @apply bg-gray-600 text-gray-200 p-4 my-4 mx-12 rounded-md;
+    }
+
+    .btn-inv {
+        @apply bg-gray-200 text-gray-600 p-4 my-4 mx-12 rounded-md;
+    }
+    .form-label {
+        @apply text-xs text-gray-600 mb-2 font-semibold px-1 uppercase;
+    }
+    .text-input {
+        @apply w-full mb-8 pr-3 py-4 px-4 text-sm rounded-lg border-none outline-none shadow-sm focus:shadow-md;
+    }
+}

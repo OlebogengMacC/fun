@@ -1,0 +1,48 @@
+<h1>Show Thing</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @thing.name %>
+  </li>
+
+  <li>
+    <strong>Alternate name:</strong>
+    <%= @thing.alternate_name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @thing.description %>
+  </li>
+
+  <li>
+    <strong>Disambiguating description:</strong>
+    <%= @thing.disambiguating_description %>
+  </li>
+
+  <li>
+    <strong>Identifier:</strong>
+    <%= @thing.identifier %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @thing.image %>
+  </li>
+
+  <li>
+    <strong>Same as:</strong>
+    <%= @thing.same_as %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @thing.url %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.thing_path(@conn, :edit, @thing) %></span>
+<span><%= link "Back", to: Routes.thing_path(@conn, :index) %></span>
